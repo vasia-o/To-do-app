@@ -52,6 +52,11 @@ function App() {
         setTodos(newTodos);
     };
 
+    const handleDeleteClick = (clickedX) => {
+        const newTodos = todos.filter((todo) => todo.id !== clickedX.id);
+        setTodos(newTodos);
+    };
+
     return (
         <div className="todo-app-container">
             <div className="todo-app">
@@ -91,7 +96,10 @@ function App() {
                                     </span>
                                 )}
                             </div>
-                            <button className="x-button">
+                            <button
+                                className="x-button"
+                                onClick={handleDeleteClick.bind(this, todo)}
+                            >
                                 <svg
                                     className="x-button-icon"
                                     fill="none"
