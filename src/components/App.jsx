@@ -40,6 +40,18 @@ function App() {
         inputRef.current.value = "";
     };
 
+    const handleCheckboxClick = (clickedTodo) => {
+        const todosCopy = [...todos];
+
+        const newTodos = todosCopy.map((item) => {
+            if (item.id === clickedTodo.id) {
+                item.isComplete = !item.isComplete;
+            }
+            return item;
+        });
+        setTodos(newTodos);
+    };
+
     return (
         <div className="todo-app-container">
             <div className="todo-app">
@@ -64,10 +76,20 @@ function App() {
                             }}
                         >
                             <div className="todo-item">
-                                <input type="checkbox" />
-                                <span className="todo-item-label">
-                                    {todo.title}
-                                </span>
+                                <input
+                                    type="checkbox"
+                                    checked={todo.isComplete}
+                                    onChange={() => handleCheckboxClick(todo)}
+                                />
+                                {todo.isComplete ? (
+                                    <span className="todo-item-label todo-item-striked">
+                                        {todo.title}
+                                    </span>
+                                ) : (
+                                    <span className="todo-item-label">
+                                        {todo.title}
+                                    </span>
+                                )}
                             </div>
                             <button className="x-button">
                                 <svg

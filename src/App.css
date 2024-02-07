@@ -67,6 +67,10 @@ h2 {
     margin-left: 16px;
 }
 
+.todo-item-striked {
+    text-decoration: line-through;
+}
+
 .todo-item-input {
     margin-left: 8px;
     width: 100%;
