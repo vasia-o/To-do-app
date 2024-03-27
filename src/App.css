@@ -49,10 +49,19 @@ h2 {
 }
 
 .todo-item-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     margin-top: 24px;
+}
+
+.to-do-edit-container {
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+}
+
+.to-do-general-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .todo-item {
@@ -60,7 +69,17 @@ h2 {
     align-items: center;
     flex: 1;
     font-size: 18px;
-    margin-right: 24px;
+    justify-content: space-between;
+}
+
+.to-do-container-field {
+    display: flex;
+    align-items: center;
+}
+
+.to-do-container-buttons {
+    display: flex;
+    align-items: center;
 }
 
 .todo-item-label {
@@ -92,13 +111,28 @@ h2 {
     margin-top: 16px;
 }
 
-.x-button {
+.edit-button {
     background: white;
     color: #6b7280;
     border: none;
     cursor: pointer;
 }
 
+.edit-button-icon {
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+.edit-button:hover {
+    color: #1f2937;
+}
+
+.x-button {
+    background: white;
+    color: #6b7280;
+    border: none;
+    cursor: pointer;
+}
 .x-button:hover {
     color: #1f2937;
 }
@@ -147,4 +181,13 @@ h2 {
     margin-top: 22px;
     padding-top: 16px;
     border-top: 1px solid lightgray;
+}
+
+.edit-field {
+    margin-left: 8px;
+    width: 100%;
+    border: none;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    padding: 8px;
+    font-size: 18px;
 }
